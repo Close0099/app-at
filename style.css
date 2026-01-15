@@ -1,0 +1,4 @@
+body { font-family: Arial; text-align: center; margin: 20px; }
+video, canvas { border: 1px solid #ccc; max-width: 100%; }
+button { padding: 10px; margin: 10px; }
+#status { font-size: 18px; margin: 20px; }

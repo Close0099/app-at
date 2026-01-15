@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7ilrDilaA8L3RleHQ+PC9zdmc+">
+</head>
+<body>
+    <h1>Reconhecimento de Objetos com Câmara</h1>
+    <div id="selectMode">
+        <h2>Passo 1: Selecionar Objeto de Referência</h2>
+        <p>Capture uma foto do objeto que quer encontrar.</p>
+        <button id="startSelect">Iniciar Câmera</button>
+        <video id="selectVideo" autoplay></video>
+        <canvas id="selectCanvas" style="display:none;"></canvas>
+        <button id="captureSelect" style="display:none;">Capturar Objeto</button>
+        <button id="confirmSelect" style="display:none;">Confirmar Seleção</button>
+    </div>
+    <div id="searchMode" style="display:none;">
+        <h2>Passo 2: Procurar Objeto</h2>
+        <p>Use a câmera para encontrar o objeto selecionado.</p>
+        <video id="searchVideo" autoplay></video>
+        <canvas id="searchCanvas" style="display:none;"></canvas>
+        <div id="status">Procurando...</div>
+        <button id="reset">Reiniciar</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="script.js"></script>
+</body>
+</html>
