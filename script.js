@@ -134,7 +134,7 @@ async function searchLoop() {
                 const similarity = cosineSimilarity(referenceFeatures, features);
                 console.log(`Similarity for ${prediction.class}: ${similarity}`);
                 maxSimilarity = Math.max(maxSimilarity, similarity);
-                if (similarity > 0.5 && prediction.class === referenceClass) {
+                if (similarity > 0.5) {
                     found = true;
                     searchCtx.strokeStyle = 'red';
                     searchCtx.lineWidth = 4;
