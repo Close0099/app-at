@@ -17,7 +17,8 @@ async function loadModels() {
 }
 
 document.getElementById('startSelect').addEventListener('click', async () => {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    const facingMode = document.getElementById('selectCamera').value;
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode } });
     selectVideo.srcObject = stream;
     document.getElementById('captureSelect').style.display = 'inline';
 });
@@ -73,7 +74,8 @@ document.getElementById('confirmSelect').addEventListener('click', async () => {
 async function startSearch() {
     console.log('Starting search...');
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        const facingMode = document.getElementById('searchCamera').value;
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode } });
         searchVideo.srcObject = stream;
         console.log('Video stream set');
         // Wait for video to load and have dimensions
